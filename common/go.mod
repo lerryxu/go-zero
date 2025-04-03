@@ -1,6 +1,6 @@
-module git.ycsoft.site/go-zero/common
+module github.com/lerryxu/go-zero/common
 
-go 1.20
+go 1.23.0
 
 require (
 	github.com/pkg/errors v0.9.1
