@@ -36,6 +36,10 @@ func NewErrorCode(code uint32, args ...any) *Error {
 	return &Error{Code: code, Msg: GetErrMsg(code, args...)}
 }
 
+func NewErrorCodeLang(lang string, code uint32, args ...any) *Error {
+	return &Error{Code: code, Msg: GetErrMsgLang(lang, code, args...)}
+}
+
 func NewErrorMsg(msg string) *Error {
 	return &Error{Code: SERVER_COMMON_ERROR, Msg: msg}
 }

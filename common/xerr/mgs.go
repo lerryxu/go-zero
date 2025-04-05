@@ -39,3 +39,15 @@ func GetErrMsg(errcode uint32, args ...any) string {
 		return ""
 	}
 }
+
+// 携带客户端语言的错误提示
+func GetErrMsgLang(lang string, errCode uint32, args ...any) string {
+	if message[lang] == nil {
+		lang = defaultLang
+	}
+	if msg, ok := message[lang][errCode]; ok {
+		return fmt.Sprintf(msg, args...)
+	} else {
+		return ""
+	}
+}
