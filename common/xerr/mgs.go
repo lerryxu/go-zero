@@ -3,14 +3,14 @@ package xerr
 import "fmt"
 
 var message = map[string]map[uint32]string{}
-var defaultLang = "zh-CN"
+var defaultLang = "en"
 
 func init() {
 	message[defaultLang] = map[uint32]string{
 		OK:                  "SUCCESS",
-		SERVER_COMMON_ERROR: "服务器开小差啦,稍后再来试一试",
-		REUQEST_PARAM_ERROR: "参数错误",
-		TOKEN_EXPIRE_ERROR:  "Token已过期",
+		SERVER_COMMON_ERROR: "Network abnormality, please try again later",
+		REUQEST_PARAM_ERROR: "Parameter error",
+		TOKEN_EXPIRE_ERROR:  "Token has expired",
 	}
 }
 
@@ -31,7 +31,7 @@ func SetLang(lang string) {
 
 func GetErrMsg(errcode uint32, args ...any) string {
 	if message[defaultLang] == nil {
-		defaultLang = "zh-CN"
+		defaultLang = "en"
 	}
 	if msg, ok := message[defaultLang][errcode]; ok {
 		return fmt.Sprintf(msg, args...)
