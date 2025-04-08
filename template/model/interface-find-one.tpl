@@ -1,0 +1,2 @@
+FindOne(ctx context.Context, {{.lowerStartCamelPrimaryKey}} {{.dataType}}) (*{{.upperStartCamelObject}}, error)
+FindOneBy(ctx context.Context, {{.lowerStartCamelPrimaryKey}} map[string]any) (*{{.upperStartCamelObject}}, error)
