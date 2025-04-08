@@ -6,7 +6,7 @@ import (
 
 	{{.imports}}
 
-	"git.ycsoft.site/go-zero/common/xerr"
+	"github.com/lerryxu/go-zero/common/xerr"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
